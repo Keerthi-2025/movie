@@ -1,13 +1,11 @@
 package com.movieticket.movie.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ValueGenerationType;
 
 @Data
 @Entity
@@ -18,9 +16,10 @@ import lombok.NoArgsConstructor;
 
 public class Seat {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  String seatId;
 
-    @Column(nullable = false)
+    @Column
     private  String showtimeId;
 
     @Column

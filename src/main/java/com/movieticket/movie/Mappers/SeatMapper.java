@@ -5,9 +5,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SeatMapper {
-    public  Seat toSeat(String seatId, String showtimeId, String seatRow, String seatNumber, String seatAvail, String seatType, String seatSection){
+    public  Seat toSeat(String seatId,String showtimeId, String seatRow, String seatNumber, String seatType, String seatSection){
         return Seat.builder()
-        .seatId(seatId)
         .showtimeId(showtimeId)
         .seatRow(seatRow)
         .seatNumber(seatNumber)
@@ -16,5 +15,6 @@ public class SeatMapper {
         .build();
 
     }
+
 
 }
