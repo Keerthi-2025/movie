@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ValueGenerationType;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "Seat")
@@ -37,5 +39,22 @@ public class Seat {
     @Column
     private  String seatSection;
 
+    @ManyToOne  //movie and showtime
+    @JoinColumn(name = "movie")
+    private  Movie movie;
+
+    @ManyToOne   //theater and showtime
+    @JoinColumn(name = "theater_id")
+    private Theater theater;
+
+    @OneToMany(mappedBy = "seat",cascade = CascadeType.ALL)  //showtime and booking
+    private List<Booking> bookings;
+
+   // @OneToOne(mappedBy = "seatid",cascade = CascadeType.ALL)
+   // private Booking booking;
+
+
 
 }
+
+

@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Table(name = "Booking")
@@ -36,10 +37,19 @@ public class Booking {
     private PaymentMethod paymentMethod;
 
 
-
-    @ManyToOne
+    @ManyToOne // user and booking
     @JoinColumn(name = "userId")
     private  User user;
+
+   @ManyToOne    //showtime and booking
+   @JoinColumn(name = "showtime")
+    private Seat seat;
+
+   /*@OneToOne
+    @JoinColumn(name = "seatId")
+    private Seat seat;*/
+
+
 
 
 

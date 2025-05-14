@@ -27,7 +27,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) //user and booking
     private List<Booking> bookings;
 
 }
