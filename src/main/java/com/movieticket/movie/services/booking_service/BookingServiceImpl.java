@@ -2,6 +2,7 @@ package com.movieticket.movie.services.booking_service;
 
 
 import com.movieticket.movie.mappers.BookingMapper;
+import com.movieticket.movie.models.*;
 import com.movieticket.movie.repositories.BookingRepository;
 import com.movieticket.movie.utils.UUIDUtil;
 import org.springframework.stereotype.Service;
@@ -22,10 +23,11 @@ public class BookingServiceImpl implements BookingService {
 
 
     @Override
-    public String createBooking(String bookingId, String bookingDate, String paymentMethod, String paymentStatus, String user, String seatAvailability, String showtime) {
-        return "";
+    public String createBooking(String bookingId, String bookingDate, PaymentMethod paymentMethod, PaymentStatus paymentStatus, User user, SeatAvailability seatAvailability, Showtime showtime) {
+        return "Booking Created";
     }
 }
+
 
 
 

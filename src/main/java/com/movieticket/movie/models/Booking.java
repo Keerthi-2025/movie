@@ -37,4 +37,6 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "showtimeId")
     private Showtime showtime;
+
+
 }
