@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface TheaterRepository extends JpaRepository<Theater, String> {
 
-    List<Theater> findByLocationIgnoreCase(String location);
 
-    List<Theater> findByNameIgnoreCase(String name);
 
 }

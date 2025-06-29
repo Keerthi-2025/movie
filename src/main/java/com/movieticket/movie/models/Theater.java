@@ -1,12 +1,10 @@
 package com.movieticket.movie.models;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.List;
 
 @Data
@@ -15,20 +13,13 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Theater {
-
     @Id
-    private  String theaterId;
+    private String theaterId;
 
-    @Column
-    private  String name;
+    private String name;
+    private String location;
 
-    @Column
-    private  String location;
-
-    @OneToMany(mappedBy = "theater",cascade =CascadeType.ALL)  //theater and showtime
+    @OneToMany(mappedBy = "theater", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Seat> seats;
-
-
 }

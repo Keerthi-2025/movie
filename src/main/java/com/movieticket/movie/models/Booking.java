@@ -1,59 +1,40 @@
 package com.movieticket.movie.models;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
-@Table(name = "Booking")
 @Entity
+@Table(name = "Booking", uniqueConstraints = @UniqueConstraint(
+        columnNames = {"seat_availability_id", "showtimeId"}
+))
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-
 public class Booking {
     @Id
-    private  String bookId;
-
-    @Column(nullable = false)
-    private String showtimeId;
-
-    @Column
-    private  String seatId;
-
-    @Column(nullable = false)
+    private String bookingId;
     private LocalDateTime bookingDate;
 
-    @Column
-    private String paymentStatus;
-
-    @Column
+    @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus;
 
-    @ManyToOne // user and booking
+    @ManyToOne
     @JoinColumn(name = "userId")
-    private  User user;
+    private User user;
 
-   @ManyToOne    //showtime and booking
-   @JoinColumn(name = "showtime")
-    private Seat seat;
+    @ManyToOne
+    @JoinColumn(name = "seat_availability_id")
+    private SeatAvailability seatAvailability;
 
-   /*@OneToOne
-    @JoinColumn(name = "seatId")
-    private Seat seat;*/
-
-
-
-
-
-
-
-
+    @ManyToOne
+    @JoinColumn(name = "showtimeId")
+    private Showtime showtime;
 }

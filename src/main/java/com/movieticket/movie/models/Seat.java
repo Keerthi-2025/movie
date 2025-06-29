@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ValueGenerationType;
-
 import java.util.List;
 
 @Data
@@ -15,46 +13,19 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Seat {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  String seatId;
+    private String seatId;
 
-    @Column
-    private  String showtimeId;
-
-    @Column
     private String seatRow;
+    private String seatNumber;
+    private String seatType;
+    private String seatSection;
 
-    @Column
-    private  String seatNumber;
-
-    @Column
-    private boolean seatAvail = true;
-
-    @Column
-    private  String seatType;
-
-    @Column
-    private  String seatSection;
-
-    @ManyToOne  //movie and showtime
-    @JoinColumn(name = "movie")
-    private  Movie movie;
-
-    @ManyToOne   //theater and showtime
-    @JoinColumn(name = "theater_id")
+    @ManyToOne
+    @JoinColumn(name = "theaterId")
     private Theater theater;
 
-    @OneToMany(mappedBy = "seat",cascade = CascadeType.ALL)  //showtime and booking
-    private List<Booking> bookings;
-
-   // @OneToOne(mappedBy = "seatid",cascade = CascadeType.ALL)
-   // private Booking booking;
-
-
-
+    @OneToMany(mappedBy = "seat", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<SeatAvailability> availabilities;
 }
-
-

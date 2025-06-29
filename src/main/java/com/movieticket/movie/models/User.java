@@ -5,18 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.List;
 
 @Data
-@Table
 @Entity
+@Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class User {
     @Id
-    private String id;
+    private String userId;
 
     @Column(nullable = false, unique = true)
     private String username;
@@ -27,7 +26,6 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) //user and booking
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Booking> bookings;
-
 }

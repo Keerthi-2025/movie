@@ -1,19 +1,19 @@
 package com.movieticket.movie.models;
 
 public enum Genre {
-    Drama,
-    Comdey,
-    Action,
-    Adventure,
-    Horror,
-    Thriller,
-    Science_Friction,
-    Romance,
-    Mystery,
-    Superhero,
-    Biopic,
-    Crime,
-    Animation,
-    Sports,
-    Martial_Arts
+    DRAMA,
+    COMEDY,
+    ACTION,
+    ADVENTURE,
+    HORROR,
+    THRILLER,
+    SCIENCE_FICTION,
+    ROMANCE,
+    MYSTERY,
+    SUPERHERO,
+    BIOPIC,
+    CRIME,
+    ANIMATION,
+    SPORTS,
+    MARTIAL_ARTS
 }
