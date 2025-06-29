@@ -20,6 +20,7 @@ public class BookingServiceImpl implements BookingService {
         this.uuidUtil = uuidUtil;
     }
 
+
     @Override
     public String createBooking(String bookingId, String bookingDate, String paymentMethod, String paymentStatus, String user, String seatAvailability, String showtime) {
         return "";
