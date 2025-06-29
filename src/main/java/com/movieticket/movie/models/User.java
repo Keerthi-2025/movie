@@ -28,4 +28,7 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Booking> bookings;
+
+
+
 }
