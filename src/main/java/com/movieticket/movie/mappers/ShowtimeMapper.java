@@ -1,4 +1,4 @@
-package com.movieticket.movie.Mappers;
+package com.movieticket.movie.mappers;
 
 import com.movieticket.movie.models.Showtime;
 
@@ -11,6 +11,7 @@ public class ShowtimeMapper {
                 .startTime(startTime)
                 .endTime(endTime)
                 .seatAvailabilities(seatAvailabilities)
+                .build();
     }
 
 

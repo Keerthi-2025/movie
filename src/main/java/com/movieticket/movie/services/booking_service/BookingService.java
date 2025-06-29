@@ -4,6 +4,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface BookingService {
-    String createBooking(String userId, String username, String password, String email);
+    String createBooking(String bookingId, String bookingDate,String paymentMethod, String paymentStatus, String user,String seatAvailability, String showtime);
 
 }

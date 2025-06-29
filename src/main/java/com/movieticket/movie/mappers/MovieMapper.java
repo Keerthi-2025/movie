@@ -1,4 +1,4 @@
-package com.movieticket.movie.Mappers;
+package com.movieticket.movie.mappers;
 
 import com.movieticket.movie.models.Movie;
 

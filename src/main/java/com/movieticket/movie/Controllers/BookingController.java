@@ -18,9 +18,13 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    @PostMapping("v1/createBooking")
-    public ResponseEntity<String> createBooking(@RequestBody CreateBookingDto data){
-        String message = bookingService.createBooking(data.userId(), data.username(),data.password(),data.email());
+    @PostMapping("/v1/createBooking")
+    public ResponseEntity<String>createBooking(@RequestBody CreateBookingDto data){
+        String message = bookingService.createBooking(data.bookingId(), data.bookingDate(), data.paymentMethod(), data.paymentStatus(), data.user(), data.seatAvailability(), data.showtime());
         return ResponseEntity.status(201).body(message);
     }
-}
+
+
+
+    }
+
