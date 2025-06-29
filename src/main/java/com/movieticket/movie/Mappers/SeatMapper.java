@@ -3,7 +3,7 @@ package com.movieticket.movie.Mappers;
 import com.movieticket.movie.models.Seat;
 
 public class SeatMapper {
-    public Seat toSeat(String seatId, String seatRow, String seatNumber, String seatType, String seatSection,String theater){
+    public Seat toSeat(String seatId, String seatRow, String seatNumber, String seatType, String seatSection,String theater, String availabilities){
         return Seat.builder()
                 .seatId(seatId)
                 .seatRow(seatRow)
@@ -11,6 +11,7 @@ public class SeatMapper {
                 .seatType(seatType)
                 .seatSection(seatSection)
                 .theater(theater)
+                .availabilities(availabilities)
                 .build();
     }
 }
