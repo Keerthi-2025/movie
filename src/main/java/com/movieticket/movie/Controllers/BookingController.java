@@ -2,6 +2,7 @@ package com.movieticket.movie.Controllers;
 
 
 import com.movieticket.movie.Dto.Request.CreateBookingDto;
+import com.movieticket.movie.services.booking_service.BookingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

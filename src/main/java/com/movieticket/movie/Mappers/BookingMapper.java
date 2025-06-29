@@ -6,7 +6,7 @@ import java.awt.print.Book;
 
 public class BookingMapper {
     public Booking toBooking(String bookingId, String paymentMethod, String paymentStatus, String user,String seatAvailability, String showtime){
-        return Booking.builer()
+        return Booking.builder()
                 .bookingId(bookingId)
                 .payementMethod(paymentMethod)
                 .paymentStatus(paymentStatus)
