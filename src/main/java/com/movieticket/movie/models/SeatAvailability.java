@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class SeatAvailability {
     @Id
-    private String id;
+    private String seatAvailid;
 
     private boolean available = true;
 
