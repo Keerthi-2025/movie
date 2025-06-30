@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/web/api/booking")
+@RequestMapping("/web/api/Booking")
 public class BookingController {
     private final BookingService bookingService;
 
@@ -23,8 +23,14 @@ public class BookingController {
         return ResponseEntity.status(201).body(message);
     }
 
-    @GetMapping("/v1/getAllBooking")
+    @GetMapping("/v1/getAllBookings")
     ResponseEntity<List<Booking>> getAllBookings() {
         return ResponseEntity.status(200).body(bookingService.getAllBookings());
+
+    }
+
+    @GetMapping("/v1/getBookingId")
+    ResponseEntity<Booking>getBookingId(@RequestParam("bookingId")String bookingId){
+        return ResponseEntity.status(200).body(bookingService.getBookingId(bookingId));
     }
 }
