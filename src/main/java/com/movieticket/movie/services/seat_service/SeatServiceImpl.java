@@ -1,5 +1,6 @@
 package com.movieticket.movie.services.seat_service;
 
+import com.movieticket.movie.Exceptions.ApiRequestException;
 import com.movieticket.movie.mappers.SeatMapper;
 import com.movieticket.movie.models.Seat;
 import com.movieticket.movie.models.Theater;
@@ -35,7 +36,7 @@ public class SeatServiceImpl implements SeatService {
 
     @Override
     public Seat getSeatId(String seatId) {
-        return null;
+        return seatRepository.findById(seatId).orElseThrow(()-> new ApiRequestException("Seat Id does not exits"));
     }
 
 
