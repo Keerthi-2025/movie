@@ -1,6 +1,8 @@
 package com.movieticket.movie.Dto.Request;
 
-public record CreateBookingDto(String bookingId, String bookingDate, String paymentMethod, String paymentStatus, String user, String seatAvailability, String showtime)  {
+import com.movieticket.movie.models.*;
+
+public record CreateBookingDto(String bookingId, String bookingDate, PaymentMethod paymentMethod, PaymentStatus paymentStatus, User user, SeatAvailability seatAvailability, Showtime showtime)  {
 
 
 

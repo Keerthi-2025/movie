@@ -7,6 +7,8 @@ import com.movieticket.movie.repositories.BookingRepository;
 import com.movieticket.movie.utils.UUIDUtil;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookingServiceImpl implements BookingService {
     private final BookingRepository bookingRepository;
@@ -25,6 +27,11 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public String createBooking(String bookingId, String bookingDate, PaymentMethod paymentMethod, PaymentStatus paymentStatus, User user, SeatAvailability seatAvailability, Showtime showtime) {
         return "Booking Created";
+    }
+
+    @Override
+    public List<Booking> getAllBookings() {
+        return bookingRepository.findAll();
     }
 }
 
