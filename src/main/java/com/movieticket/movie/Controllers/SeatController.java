@@ -26,11 +26,11 @@ public class SeatController {
 
     @GetMapping("/v1/getAllSeats")
     ResponseEntity<List<Seat>>getAllSeats(){
-        return ResponseEntity.status(201).body(seatService.getAllSeats());
+        return ResponseEntity.status(200).body(seatService.getAllSeats());
     }
 
     @GetMapping("/v1/getSeatId")
     ResponseEntity<Seat>getSeatId(@RequestParam("seatId")String seatId){
-        return ResponseEntity.status(201).body(seatService.getSeatId(seatId));
+        return ResponseEntity.status(200).body(seatService.getSeatId(seatId));
     }
 }
