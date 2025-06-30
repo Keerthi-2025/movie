@@ -1,4 +1,7 @@
 package com.movieticket.movie.services.seat_service;
 
-public class SeatServiceImpl {
+import com.movieticket.movie.models.Seat;
+
+public class SeatServiceImpl implements SeatService {
+    pri
 }
