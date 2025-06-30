@@ -27,7 +27,7 @@ public class MovieServiceImpl implements  MovieService{
 
     @Override
     public String createMovie(String movieId, String title,Genre genre, String duration, String rating, String poster) {
-        Movie movie = movieMapper.toMovie(uuidUtil.generateUuid(), title,genre,duration,rating,poster);
+        Movie movie = movieMapper.toMovie(movieId, title,genre,duration,rating,poster);
         movieRepository.save(movie);
         return "Movie created";
     }
@@ -39,7 +39,7 @@ public class MovieServiceImpl implements  MovieService{
 
     @Override
     public Movie getMovieId(String movieId) {
-        return movieRepository.findById(String movieId).orElseThrow(()-> new ApiRequestException("Movie Id does not exist"));
+        return movieRepository.findById(movieId).orElseThrow(()-> new ApiRequestException("Movie Id does not exist"));
     }
 
 

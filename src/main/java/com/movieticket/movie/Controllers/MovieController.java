@@ -28,4 +28,9 @@ public class MovieController {
     ResponseEntity<List<Movie>>getAllMovies(){
         return ResponseEntity.status(200).body(movieService.getAllMovies());
     }
+
+    @GetMapping("/v1/getMovieId")
+    ResponseEntity<Movie>getMovieId(@RequestParam ("movieId")String movieId){
+        return ResponseEntity.status(200).body(movieService.getMovieId(movieId));
+    }
 }
