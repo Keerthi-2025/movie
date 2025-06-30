@@ -10,5 +10,8 @@ import java.util.List;
 @Service
 public interface MovieService {
     String createMovie(String movieId, String title,  Genre genre, String duration, String rating, String poster);
+
     List<Movie>getAllMovies();
+
+    Movie getMovieId(String movieId);
 }

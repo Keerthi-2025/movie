@@ -1,6 +1,7 @@
 package com.movieticket.movie.services.movie_service;
 
 
+import com.movieticket.movie.Exceptions.ApiRequestException;
 import com.movieticket.movie.mappers.MovieMapper;
 import com.movieticket.movie.models.Genre;
 import com.movieticket.movie.models.Movie;
@@ -34,6 +35,11 @@ public class MovieServiceImpl implements  MovieService{
     @Override
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
+    }
+
+    @Override
+    public Movie getMovieId(String movieId) {
+        return movieRepository.findById(String movieId).orElseThrow(()-> new ApiRequestException("Movie Id does not exist"));
     }
 
 
