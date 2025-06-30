@@ -23,9 +23,11 @@ public class MovieServiceImpl implements  MovieService{
 
 
     @Override
-    public String createMovie(String movieId, Genre genre, String duration, String rating, String poster) {
-        Movie movie = movieMapper.toMovie(uuidUtil.generateUuid(), genre,duration,rating,poster);
+    public String createMovie(String movieId, String title,Genre genre, String duration, String rating, String poster) {
+        Movie movie = movieMapper.toMovie(uuidUtil.generateUuid(), title,genre,duration,rating,poster);
         movieRepository.save(movie);
         return "Movie created";
     }
+
+
 }

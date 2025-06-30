@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface MovieService {
-    String createMovie(String movieId, Genre genre, String duration, String rating, String poster);
+    String createMovie(String movieId, String title,  Genre genre, String duration, String rating, String poster);
 }
