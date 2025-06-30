@@ -29,4 +29,8 @@ public class SeatController {
         return ResponseEntity.status(201).body(seatService.getAllSeats());
     }
 
+    @GetMapping("/v1/getSeatId")
+    ResponseEntity<Seat>getSeatId(@RequestParam("seatId")String seatId){
+        return ResponseEntity.status(201).body(seatService.getSeatId(seatId));
+    }
 }

@@ -33,5 +33,10 @@ public class SeatServiceImpl implements SeatService {
         return seatRepository.findAll();
     }
 
+    @Override
+    public Seat getSeatId(String seatId) {
+        return null;
+    }
+
 
 }
