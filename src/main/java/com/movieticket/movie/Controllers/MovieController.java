@@ -20,4 +20,7 @@ public class MovieController {
         String message = movieService.createMovie(data.movieId(), data.title(), data.genre(), data.duration(), data.rating(), data.poster());
         return ResponseEntity.status(201).body(message);
     }
+
+    @GetMapping("/v1/getAllMovies")
+    public  ResponseEntity<String>
 }

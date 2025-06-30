@@ -8,6 +8,8 @@ import com.movieticket.movie.repositories.MovieRepository;
 import com.movieticket.movie.utils.UUIDUtil;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MovieServiceImpl implements  MovieService{
     private  final MovieRepository movieRepository;
@@ -27,6 +29,11 @@ public class MovieServiceImpl implements  MovieService{
         Movie movie = movieMapper.toMovie(uuidUtil.generateUuid(), title,genre,duration,rating,poster);
         movieRepository.save(movie);
         return "Movie created";
+    }
+
+    @Override
+    public List<Movie> getAllMovies() {
+        return movieRepository.findAll();
     }
 
 
