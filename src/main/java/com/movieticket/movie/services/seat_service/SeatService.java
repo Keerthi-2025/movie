@@ -13,4 +13,6 @@ public interface SeatService {
     String createSeat(String seatId, String seatRow, String seatNumber,String seatType, String seatSection, Theater theater);
 
     List<Seat> getAllSeats();
+
+    Seat getSeatId(String seatId);
 }
