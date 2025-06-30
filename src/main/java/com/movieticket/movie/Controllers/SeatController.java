@@ -23,4 +23,6 @@ public class SeatController {
         String message = seatService.createSeat(data.seatId(), data.seatRow(), data.seatNumber(), data.seatType(), data.seatSection(), data.theater());
         return  ResponseEntity.status(201).body(message);
     }
+
+
 }
