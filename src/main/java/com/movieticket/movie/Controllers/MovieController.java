@@ -2,9 +2,12 @@ package com.movieticket.movie.Controllers;
 
 
 import com.movieticket.movie.Dto.Request.CreateMovieDto;
+import com.movieticket.movie.models.Movie;
 import com.movieticket.movie.services.movie_service.MovieService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/web/api/Movie")
@@ -22,5 +25,7 @@ public class MovieController {
     }
 
     @GetMapping("/v1/getAllMovies")
-    public  ResponseEntity<String>
+    ResponseEntity<List<Movie>>getAllMovies(){
+        return ResponseEntity.status(200).body(movieService.getAllMovies());
+    }
 }
