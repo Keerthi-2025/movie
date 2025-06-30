@@ -4,10 +4,7 @@ package com.movieticket.movie.Controllers;
 import com.movieticket.movie.Dto.Request.CreateMovieDto;
 import com.movieticket.movie.services.movie_service.MovieService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/web/api/Movie")
@@ -19,7 +16,7 @@ public class MovieController {
     }
 
     @PostMapping("/v1/createMovie")
-    public ResponseEntity<String>createMovie(@RequestParam CreateMovieDto data){
+    public ResponseEntity<String>createMovie(@RequestBody CreateMovieDto data){
         String message = movieService.createMovie(data.movieId(), data.title(), data.genre(), data.duration(), data.rating(), data.poster());
         return ResponseEntity.status(201).body(message);
     }
