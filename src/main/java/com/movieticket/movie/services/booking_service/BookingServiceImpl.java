@@ -33,8 +33,7 @@ public class BookingServiceImpl implements BookingService {
         DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
         LocalDateTime BookingDate = LocalDateTime.parse(bookingDate, formatter);
 
-        Booking booking = bookingMapper.toBooking(uuidUtil.generateUuid(),BookingDate, paymentMethod, paymentStatus, user, showtime, seatAvailability
-        );
+        Booking booking = bookingMapper.toBooking(uuidUtil.generateUuid(),BookingDate, paymentMethod, paymentStatus, user, showtime, seatAvailability);
         bookingRepository.save(booking);
         return "Booking Created";
 
