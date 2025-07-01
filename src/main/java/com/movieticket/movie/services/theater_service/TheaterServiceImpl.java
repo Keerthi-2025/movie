@@ -1,6 +1,7 @@
 package com.movieticket.movie.services.theater_service;
 
 
+import com.movieticket.movie.Exceptions.ApiRequestException;
 import com.movieticket.movie.mappers.TheaterMapper;
 import com.movieticket.movie.models.Theater;
 import com.movieticket.movie.repositories.TheaterRepository;
@@ -32,5 +33,10 @@ public class TheaterServiceImpl implements TheaterService{
     @Override
     public List<Theater> getAllTheaters() {
         return theaterRepository.findAll();
+    }
+
+    @Override
+    public Theater getTheaterId(String theaterId) {
+        return theaterRepository.findById(theaterId).orElseThrow(()-> new ApiRequestException("Theater ID does not exists"));
     }
 }

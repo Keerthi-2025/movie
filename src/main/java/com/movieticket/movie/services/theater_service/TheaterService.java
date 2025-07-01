@@ -12,5 +12,5 @@ public interface TheaterService {
 
     List<Theater> getAllTheaters();
 
-    Theater getTheaterId(String theaterid);
+    Theater getTheaterId(String theaterId);
 }
