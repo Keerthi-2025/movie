@@ -11,4 +11,6 @@ public interface TheaterService {
     String createTheater(String theaterId, String name, String location);
 
     List<Theater> getAllTheaters();
+
+    Theater getTheaterId(String theaterid);
 }
