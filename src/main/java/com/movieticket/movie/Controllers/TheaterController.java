@@ -29,4 +29,9 @@ public class TheaterController {
     ResponseEntity<List<Theater>> getAllTheaters() {
         return ResponseEntity.status(200).body(theaterService.getAllTheaters());
     }
+
+    @GetMapping("/v1/getTheaterId")
+    ResponseEntity<Theater>getTheaterId(@RequestParam ("theaterId")String theaterId){
+        return ResponseEntity.status(200).body(theaterService.getTheaterId(theaterId));
+    }
 }
