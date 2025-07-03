@@ -26,8 +26,8 @@ public class ShowtimeServiceImpl implements ShowtimeService{
     }
 
     @Override
-    public String createShowtime(String showtimeId, Movie movie, Theater theater, LocalDateTime startTime, LocalDateTime endTime) {
-        Showtime showtime = showtimeMapper.toShowtime(uuidUtil.generateUuid(), movie,theater,startTime,endTime);
+    public String createShowtime(String showtimeId, Movie movieId, Theater theaterId, LocalDateTime startTime, LocalDateTime endTime) {
+        Showtime showtime = showtimeMapper.toShowtime(uuidUtil.generateUuid(), movieId,theaterId,startTime,endTime);
         showtimeRepository.save(showtime);
         return "Showtime created";
     }

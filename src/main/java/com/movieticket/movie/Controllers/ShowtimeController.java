@@ -1,12 +1,9 @@
 package com.movieticket.movie.Controllers;
 
 
-import com.movieticket.movie.Dto.Request.CreateSeatDto;
 import com.movieticket.movie.Dto.Request.CreateShowtimeDto;
-import com.movieticket.movie.models.Seat;
 import com.movieticket.movie.models.Showtime;
 import com.movieticket.movie.services.showtime_service.ShowtimeService;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +21,7 @@ public class ShowtimeController {
 
     @PostMapping("/v1/createShowtime")
     ResponseEntity<String>createShowtime(@RequestBody CreateShowtimeDto data){
-        String message = showtimeService.createShowtime(data.showtimeId(), data.movie(),data.theater(),data.startTime(),data.endTime());
+        String message = showtimeService.createShowtime(data.showtimeId(), data.movieId(),data.theaterId(),data.startTime(),data.endTime());
         return  ResponseEntity.status(201).body(message);
     }
 

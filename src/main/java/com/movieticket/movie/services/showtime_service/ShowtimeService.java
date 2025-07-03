@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public interface ShowtimeService {
 
-    String createShowtime(String showtimeId, Movie movie, Theater theater, LocalDateTime startTime,LocalDateTime endTime);
+    String createShowtime(String showtimeId, Movie movieId, Theater theaterId, LocalDateTime startTime,LocalDateTime endTime);
 
     List<Showtime>getAllShowtimes();
 
